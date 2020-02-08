@@ -1,9 +1,11 @@
 import React from "react";
 import { RStore, Actions } from "../../utils/store";
 import "./form.css";
+import { withRouter } from "react-router-dom";
+
 var Reflux = require("reflux");
 
-export default class Create extends Reflux.Component {
+class Create extends Reflux.Component {
   constructor(props) {
     super(props);
     this.store = RStore; // <- the only thing needed to tie the store into this component
@@ -28,6 +30,7 @@ export default class Create extends Reflux.Component {
       requirements: this.state.requirements.split(","),
       tasks: this.state.tasks.split(",")
     });
+    this.props.history.push("/#true");
   };
 
   render() {
@@ -109,3 +112,5 @@ export default class Create extends Reflux.Component {
     );
   }
 }
+
+export default withRouter(Create);

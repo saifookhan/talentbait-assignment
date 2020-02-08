@@ -18,6 +18,7 @@ class RStore extends Reflux.Store {
   onAppendJobs(v) {
     console.log(v);
     this.state.jobData.push(v);
+    // window.location.href = "/#true";
   }
 
   onUpdateJob(index, v) {

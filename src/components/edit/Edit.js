@@ -63,6 +63,7 @@ class Edit extends Reflux.Component {
         ? this.state.tasks
         : this.state.tasks.split(",")
     });
+    this.props.history.push("/#true");
   };
 
   render() {

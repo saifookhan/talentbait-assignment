@@ -10,6 +10,13 @@ class AllJobs extends Reflux.Component {
     this.store = RStore;
   }
 
+  componentDidMount() {
+    console.log(window.location.hash);
+    if (window.location.hash === "#true") {
+      alert("Successful.");
+    }
+  }
+
   deleteJob(id) {
     if (window.confirm("Are you sure you want to delete? (" + id + ")")) {
       _.remove(this.state.jobData, { _id: id });
