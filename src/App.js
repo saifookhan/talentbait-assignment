@@ -12,15 +12,16 @@ function App() {
       <Router>
         <div>
           <Nav />
-
-          <Switch>
-            <Route path="/create">
-              <Create string="create" />
-            </Route>
-            <Route path="/">
-              <Home string="hi" />
-            </Route>
-          </Switch>
+          <div class="body-container">
+            <Switch>
+              <Route path="/create">
+                <Create string="create" />
+              </Route>
+              <Route path="/">
+                <Home string="hi" />
+              </Route>
+            </Switch>
+          </div>
         </div>
       </Router>
     </div>
