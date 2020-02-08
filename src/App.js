@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import Nav from "./components/_commons/header";
 import Home from "./components/home";
-import Create from "./components/create";
+import Create from "./components/create/Create";
 
 function App() {
   return (

@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Reflux from "reflux";
 import { RStore, Actions } from "../../utils/store";
 
-class Counter extends Reflux.Component {
+class AllJobs extends Reflux.Component {
   constructor(props) {
     super(props);
     this.store = RStore;
@@ -56,7 +56,7 @@ function Home(props) {
   return (
     <div>
       <div class="divider"></div>
-      <Counter />
+      <AllJobs />
     </div>
   );
 }
