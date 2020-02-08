@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import Reflux from "reflux";
 import { RStore, Actions } from "../../utils/store";
 
@@ -20,31 +19,35 @@ class AllJobs extends Reflux.Component {
           <h2>All jobs</h2>
         </div>
         <div>
-          <table class="jobs-table">
-            <tr>
-              <th>ID</th>
-              <th>Title</th>
-              <th>Location</th>
-              <th>Author</th>
-              <th>Actions</th>
-            </tr>
-            {this.state.jobData.map(job => {
-              return (
-                <tr key={job._id}>
-                  <td>{job._id}</td>
-                  <td class="jobs-table-title">{job.title}</td>{" "}
-                  <td>{job.city}</td> <td>{job.employer}</td>{" "}
-                  <td>
-                    <span>
-                      <button>edit</button>
-                    </span>
-                    <span>
-                      <button>delete</button>
-                    </span>
-                  </td>{" "}
-                </tr>
-              );
-            })}
+          <table className="jobs-table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Title</th>
+                <th>Location</th>
+                <th>Author</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {this.state.jobData.map(job => {
+                return (
+                  <tr key={job._id}>
+                    <td>{job._id}</td>
+                    <td className="jobs-table-title">{job.title}</td>
+                    <td>{job.city}</td> <td>{job.employer}</td>
+                    <td>
+                      <span>
+                        <button>edit</button>
+                      </span>
+                      <span>
+                        <button>delete</button>
+                      </span>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
           </table>
         </div>
       </div>
@@ -52,17 +55,13 @@ class AllJobs extends Reflux.Component {
   }
 }
 
-function Home(props) {
+function Home() {
   return (
     <div>
-      <div class="divider"></div>
+      <div className="divider"></div>
       <AllJobs />
     </div>
   );
 }
-
-Home.propTypes = {
-  string: PropTypes.string
-};
 
 export default Home;

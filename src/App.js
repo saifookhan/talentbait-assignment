@@ -12,7 +12,7 @@ function App() {
       <Router>
         <div>
           <Nav />
-          <div class="body-container">
+          <div className="body-container">
             <Switch>
               <Route path="/create">
                 <Create string="create" />

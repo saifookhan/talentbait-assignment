@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 function Nav() {
   return (
     <div>
-      <nav class="header">
-        <a href="/" class="logo">
+      <nav className="header">
+        <a href="/" className="logo">
           TalentBait | Post job ads on social media
         </a>
 
-        <div class="header-button-container">
+        <div className="header-button-container">
           <span>
             <Link to="/">Home</Link>
           </span>
