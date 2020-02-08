@@ -16,7 +16,37 @@ class Counter extends Reflux.Component {
           Actions.increment();
         }}
       >
-        {this.state.count}
+        <div>
+          <h2>All jobs</h2>
+        </div>
+        <div>
+          <table class="jobs-table">
+            <tr>
+              <th>ID</th>
+              <th>Title</th>
+              <th>Location</th>
+              <th>Author</th>
+              <th>Actions</th>
+            </tr>
+            {this.state.jobData.map(job => {
+              return (
+                <tr key={job._id}>
+                  <td>{job._id}</td>
+                  <td class="jobs-table-title">{job.title}</td>{" "}
+                  <td>{job.city}</td> <td>{job.employer}</td>{" "}
+                  <td>
+                    <span>
+                      <button>edit</button>
+                    </span>
+                    <span>
+                      <button>delete</button>
+                    </span>
+                  </td>{" "}
+                </tr>
+              );
+            })}
+          </table>
+        </div>
       </div>
     );
   }
@@ -25,7 +55,8 @@ class Counter extends Reflux.Component {
 function Home(props) {
   return (
     <div>
-      home {props.string} <Counter />
+      <div class="divider"></div>
+      <Counter />
     </div>
   );
 }

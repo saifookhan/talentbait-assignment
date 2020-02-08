@@ -93,3 +93,26 @@ body {
   background-color: #f5f5f5;
   margin: auto;
 }
+
+.divider {
+  padding-top: 16px;
+}
+
+.jobs-table {
+  padding: 8px;
+}
+.jobs-table tr td {
+  padding: 4px 8px;
+}
+
+.jobs-table tr th {
+  font-size: 16px;
+}
+
+.jobs-table-title {
+  text-align: left;
+}
+
+.heading-title {
+  float: left;
+}
