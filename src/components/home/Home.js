@@ -2,11 +2,18 @@ import React from "react";
 import Reflux from "reflux";
 import { RStore, Actions } from "../../utils/store";
 import { Link } from "react-router-dom";
+import _ from "lodash";
 
 class AllJobs extends Reflux.Component {
   constructor(props) {
     super(props);
     this.store = RStore;
+  }
+
+  deleteJob(id) {
+    if (window.confirm("Are you sure you want to delete? (" + id + ")")) {
+      _.remove(this.state.jobData, { _id: id });
+    }
   }
 
   render() {
@@ -44,7 +51,9 @@ class AllJobs extends Reflux.Component {
                         </Link>
                       </span>
                       <span>
-                        <button>delete</button>
+                        <button onClick={e => this.deleteJob(job._id)}>
+                          delete
+                        </button>
                       </span>
                     </td>
                   </tr>
