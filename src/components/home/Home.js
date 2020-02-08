@@ -1,6 +1,7 @@
 import React from "react";
 import Reflux from "reflux";
 import { RStore, Actions } from "../../utils/store";
+import { Link } from "react-router-dom";
 
 class AllJobs extends Reflux.Component {
   constructor(props) {
@@ -38,7 +39,9 @@ class AllJobs extends Reflux.Component {
                     <td>{job.city}</td> <td>{job.employer}</td>
                     <td>
                       <span>
-                        <button>edit</button>
+                        <Link to={"/edit/" + job._id}>
+                          <button>edit</button>
+                        </Link>
                       </span>
                       <span>
                         <button>delete</button>

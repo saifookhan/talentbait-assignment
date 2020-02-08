@@ -1,6 +1,6 @@
 var Reflux = require("reflux");
 
-var Actions = Reflux.createActions(["increment", "appendJobs"]);
+var Actions = Reflux.createActions(["increment", "appendJobs", "updateJob"]);
 
 var jobData = require("./constants/job_dataset").default;
 
@@ -18,6 +18,11 @@ class RStore extends Reflux.Store {
   onAppendJobs(v) {
     console.log(v);
     this.state.jobData.push(v);
+  }
+
+  onUpdateJob(index, v) {
+    console.log(index, v);
+    this.state.jobData[index] = v;
   }
 }
 

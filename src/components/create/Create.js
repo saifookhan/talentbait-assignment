@@ -7,7 +7,6 @@ export default class Create extends Reflux.Component {
   constructor(props) {
     super(props);
     this.store = RStore; // <- the only thing needed to tie the store into this component
-    this.actions = Actions; // <- the only thing needed to tie the store into this component
   }
 
   state = {
@@ -18,24 +17,24 @@ export default class Create extends Reflux.Component {
     requirements: "",
     tasks: ""
   };
+
+  onClickSubmit = e => {
+    e.preventDefault();
+    Actions.appendJobs({
+      _id: this.state._id,
+      title: this.state.title,
+      city: this.state.location,
+      employer: this.state.company,
+      requirements: this.state.requirements.split(","),
+      tasks: this.state.tasks.split(",")
+    });
+  };
+
   render() {
     return (
       <div class="container">
         <h2>Add new data</h2>
-        <form
-          class="form"
-          onSubmit={e => {
-            e.preventDefault();
-            Actions.appendJobs({
-              _id: this.state._id,
-              title: this.state.title,
-              city: this.state.location,
-              employer: this.state.company,
-              requirements: this.state.requirements.split(","),
-              tasks: this.state.tasks.split(",")
-            });
-          }}
-        >
+        <form class="form" onSubmit={e => this.onClickSubmit(e)}>
           <div class="form-label-input-holder">
             <div class="form-label-holder">
               <div class="form-label">ID</div>
