@@ -1,6 +1,6 @@
 .form {
   float: left;
-  min-width: 700px;
+  min-width: 800px;
   padding: 16px;
   background-color: #f5f5f5;
   display: grid;
@@ -21,6 +21,8 @@
 .form-label {
   float: left;
   font-weight: bold;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 1.1em;
 }
 
 .form-input-holder {
@@ -30,14 +32,24 @@
 
 .form-input {
   float: right;
-  padding: 4px 8px;
-  border-radius: 4px;
   height: 16px;
+  border: 1px solid rgb(153, 202, 129);
+  border-radius: 0.2em;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 1.1em;
+  padding: 0.4em 1em;
+  margin: 0 0 0.8em;
   width: 100%;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.08) inset;
 }
 .form-textarea {
   float: right;
-  margin: 4px 8px;
-  border-radius: 4px;
+  border: 1px solid rgb(153, 202, 129);
+  border-radius: 0.2em;
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 1.1em;
+  padding: 0.4em 1em;
+  margin: 0 0 0.8em;
   width: 100%;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.08) inset;
 }

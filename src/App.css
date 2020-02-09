@@ -1,10 +1,9 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Open Sans", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #efefef;
 }
 
 .App {
@@ -47,7 +46,7 @@ body {
 }
 
 .header {
-  background-color: #1144c4;
+  background-color: #3454d1;
   height: 48px;
   -webkit-box-shadow: 2px 2px 5px 0px rgba(189, 189, 189, 1);
   -moz-box-shadow: 2px 2px 5px 0px rgba(189, 189, 189, 1);
@@ -70,9 +69,7 @@ body {
   font-size: 25px;
   font-weight: bold;
   margin-left: 16%;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Open Sans", Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -101,12 +98,24 @@ body {
 .jobs-table {
   padding: 8px;
 }
+.jobs-table tr {
+  padding: 8px;
+  border-color: lighten(#34495e, 10%);
+}
+.jobs-table tr:nth-child(even) {
+  background: rgb(230, 230, 230);
+}
+
 .jobs-table tr td {
   padding: 4px 8px;
+  cursor: pointer;
 }
 
 .jobs-table tr th {
   font-size: 16px;
+  background-color: gray;
+  color: white;
+  height: 32px;
 }
 
 .jobs-table-title {
@@ -115,4 +124,48 @@ body {
 
 .heading-title {
   float: left;
+}
+
+.submitButton {
+  background-color: rgb(118, 207, 118);
+  border: 1px solid rgb(134, 189, 134);
+  border-radius: 4px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 1.4em;
+  padding: 10px 18px;
+}
+.submitButton:hover {
+  background-color: white;
+  color: rgb(118, 207, 118);
+}
+
+.edit-btn {
+  background-color: rgb(118, 207, 118);
+  border: 1px solid rgb(134, 189, 134);
+  border-radius: 4px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  font-family: inherit;
+  padding: 4px 4px;
+  margin: 2px;
+}
+.edit-btn:hover {
+  background-color: white;
+  color: rgb(118, 207, 118);
+}
+.delete-btn {
+  background-color: #d1345b;
+  border: 1px solid rgb(247, 123, 154);
+  border-radius: 4px;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  font-family: inherit;
+  padding: 4px 4px;
+  margin: 2px;
+}
+.delete-btn:hover {
+  background-color: white;
+  color: #d1345b;
 }

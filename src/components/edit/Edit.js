@@ -150,7 +150,11 @@ class Edit extends Reflux.Component {
                 ></textarea>
               </div>
             </div>
-            <button type="submit">Submit</button>
+            <div class="submit-btn-container">
+              <button type="submit" class="submitButton">
+                Submit
+              </button>
+            </div>
           </form>
         </div>
       </div>
