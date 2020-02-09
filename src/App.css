@@ -108,7 +108,6 @@ body {
 
 .jobs-table tr td {
   padding: 4px 8px;
-  cursor: pointer;
 }
 
 .jobs-table tr th {
@@ -116,6 +115,11 @@ body {
   background-color: gray;
   color: white;
   height: 32px;
+}
+
+.clickable {
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .jobs-table-title {

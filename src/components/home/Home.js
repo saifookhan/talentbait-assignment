@@ -17,7 +17,6 @@ class AllJobs extends Reflux.Component {
   };
 
   componentDidMount() {
-    console.log(window.location.hash);
     if (window.location.hash === "#true") {
       alert("Successful.");
     }
@@ -30,7 +29,6 @@ class AllJobs extends Reflux.Component {
   };
 
   previewData = id => {
-    console.log(id);
     this.setState({
       selectedData: this.state.jobData.filter(j => {
         return j._id === id;
@@ -74,7 +72,12 @@ class AllJobs extends Reflux.Component {
               {this.state.jobData.map(job => {
                 return (
                   <tr key={job._id}>
-                    <td onClick={e => this.previewData(job._id)}>{job._id}</td>
+                    <td
+                      onClick={e => this.previewData(job._id)}
+                      class="clickable"
+                    >
+                      {job._id}
+                    </td>
                     <td className="jobs-table-title">{job.title}</td>
                     <td>{job.city}</td> <td>{job.employer}</td>
                     <td>

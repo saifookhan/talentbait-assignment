@@ -9,7 +9,6 @@ class Edit extends Reflux.Component {
     super(props);
     this.store = RStore;
     this.actions = Actions; // <- the only thing needed to tie the store into this component
-    console.log(this.props);
   }
 
   state = {
@@ -34,7 +33,6 @@ class Edit extends Reflux.Component {
     let output = this.state.jobData.filter(j => {
       return j._id === this.state.urlParam;
     })[0];
-    console.log(output);
     if (output !== {}) {
       this.setState({
         _id: output._id,
@@ -50,7 +48,6 @@ class Edit extends Reflux.Component {
   onClickUpdate = e => {
     e.preventDefault();
     var index = _.findIndex(this.state.jobData, { _id: this.state.urlParam });
-    console.log(index);
     Actions.updateJob(index, {
       _id: this.state._id,
       title: this.state.title,
