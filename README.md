@@ -19,6 +19,12 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 - No design library was used in this.
 - I did try to make things look nice but didn't put much energy into styling things properly.
 
-![Image of Planning](https://github.com/saifookhan/talentbait-assignment/planning.jpg)
+### Planning
+
+![Image of Planning](https://raw.githubusercontent.com/saifookhan/talentbait-assignment/master/planning.jpg)
+
+Thank you!
+
+Looking forward hearing from you.
 
 Assignment completed by: [`saifookhan`](https://www.github.com/saifookhan)
