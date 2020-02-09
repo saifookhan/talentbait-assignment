@@ -1,6 +1,6 @@
 import React from "react";
 import Reflux from "reflux";
-import { RStore } from "../../utils/store";
+import { RStore, Actions } from "../../utils/store";
 import { Link } from "react-router-dom";
 import PreviewModal from "./PreviewModal";
 import _ from "lodash";
@@ -23,18 +23,19 @@ class AllJobs extends Reflux.Component {
     }
   }
 
-  deleteJob(id) {
+  deleteJob = id => {
     if (window.confirm("Are you sure you want to delete? (" + id + ")")) {
       _.remove(this.state.jobData, { _id: id });
     }
-  }
+  };
 
   previewData = id => {
+    console.log(id);
     this.setState({
-      showModal: true,
       selectedData: this.state.jobData.filter(j => {
         return j._id === id;
-      })[0]
+      })[0],
+      showModal: true
     });
   };
 
@@ -44,7 +45,11 @@ class AllJobs extends Reflux.Component {
 
   render() {
     return (
-      <div>
+      <div
+        onClick={e => {
+          Actions.increment();
+        }}
+      >
         <div>
           <h2>All jobs</h2>
         </div>
@@ -54,7 +59,6 @@ class AllJobs extends Reflux.Component {
             closeModal={this.closeModal}
           />
         )}
-
         <div>
           <table className="jobs-table">
             <thead>
@@ -69,8 +73,8 @@ class AllJobs extends Reflux.Component {
             <tbody>
               {this.state.jobData.map(job => {
                 return (
-                  <tr key={job._id} onClick={e => this.previewData(job._id)}>
-                    <td>{job._id}</td>
+                  <tr key={job._id}>
+                    <td onClick={e => this.previewData(job._id)}>{job._id}</td>
                     <td className="jobs-table-title">{job.title}</td>
                     <td>{job.city}</td> <td>{job.employer}</td>
                     <td>

@@ -45,7 +45,7 @@ class Create extends Reflux.Component {
             <div class="form-input-holder">
               <input
                 class="form-input"
-                onKeyPress={e => this.setState({ _id: e.target.value })}
+                onChange={e => this.setState({ _id: e.target.value })}
               ></input>
             </div>
           </div>
